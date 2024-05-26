@@ -19,6 +19,7 @@ import { LiaPhp } from "react-icons/lia";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import bg from "../assets/img/bg.jpg";
 
 const techStack = [
   { icon: <FaHtml5 size={55} className="text-brightColor" />, title: "HTML" },
@@ -68,7 +69,8 @@ const Services = () => {
   });
   return (
     <div
-      className="h-fit flex flex-col justify-center items-center lg:px-10 px-5 bg-[url('src/assets/img/bg.jpg')]"
+      className="h-fit flex flex-col justify-center items-center lg:px-10 px-5"
+      style={{ backgroundImage: `url(${bg})` }}
       data-aos="fade-right"
     >
       <h1 className="text-white text-center font-semibold text-4xl mt-20 lg:mt-20 mb-8 lg:mb-20">

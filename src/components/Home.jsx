@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img from "../assets/img/home.png";
 import Button from "../layouts/Button";
 import { Typewriter } from "react-simple-typewriter";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import bghome from "../assets/img/bghome.jpg";
 
 const Home = () => {
   useEffect(() => {
     Aos.init({ once: true, duration: 2000 });
-  });
+  }, []);
+
   const downloadCV = () => {
     const link = document.createElement("a");
     link.href =
@@ -20,11 +21,12 @@ const Home = () => {
 
   return (
     <div
-      className="min-h-screen flex flex-col justify-center lg:flex-row items-center lg:px-32 bg-[url('src/assets/img/bghome.jpg')] gap-5"
+      className="min-h-screen flex flex-col justify-center lg:flex-row items-center lg:px-32 bg-cover bg-center gap-5"
+      style={{ backgroundImage: `url(${bghome})` }}
       data-aos="fade-right"
     >
       <div className="flex flex-col items-center justify-center text-center lg:text-start lg:items-start w-full lg:w-3/4 space-y-4">
-        <h1 className="text-4xl font-semibold leading-tight mt-28 lg:mt-20 mb-10 md:px-10 flex flex-col items-center lg:items-start">
+        <h1 className="text-4xl font-semibold leading-tight mt-28 lg:mt-20 mb-10 md:px-10 flex flex-col items-center lg:items-start text-white">
           Hello I'm{" "}
           <span className="text-black mb-5">Rafly Aziz Abdillah </span>
           <span className="block text-brightColor mb-5 px-8 lg:px-0">
