@@ -1,56 +1,51 @@
 import React, { useEffect } from "react";
-import img from "../assets/img/home.png";
-import Button from "../layouts/Button";
-import { Typewriter } from "react-simple-typewriter";
+import { BsInstagram } from "react-icons/bs";
+import { FaFacebook, FaLinkedin, FaDiscord } from "react-icons/fa";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import bghome from "../assets/img/bghome.jpg";
 
-const Home = () => {
+const Footer = () => {
   useEffect(() => {
-    Aos.init({ once: true, duration: 2000 });
+    Aos.init({
+      once: true,
+      duration: 2000,
+    });
   }, []);
-
-  const downloadCV = () => {
-    const link = document.createElement("a");
-    link.href =
-      "https://drive.google.com/uc?export=download&id=1sCw5E_nOZQVh_LbluDCGybAjoNBzhYP-";
-    link.download = "Rafly_Aziz_Abdillah_CV.pdf";
-    link.click();
-  };
 
   return (
     <div
-      className="min-h-screen flex flex-col justify-center lg:flex-row items-center lg:px-32 bg-cover bg-center gap-5"
-      style={{ backgroundImage: `url(${bghome})` }}
+      className="flex flex-col lg:flex-row justify-between lg:px-32 px-5 bg-white p-5"
       data-aos="fade-right"
     >
-      <div className="flex flex-col items-center justify-center text-center lg:text-start lg:items-start w-full lg:w-3/4 space-y-4">
-        <h1 className="text-4xl font-semibold leading-tight mt-28 lg:mt-20 mb-10 md:px-10 flex flex-col items-center lg:items-start text-white">
-          Hello I'm{" "}
-          <span className="text-black mb-5">Rafly Aziz Abdillah </span>
-          <span className="block text-brightColor mb-5 px-8 lg:px-0">
-            <Typewriter
-              loop={true}
-              words={["Front-End Developer"]}
-              cursor={true}
-              cursorStyle="|"
-              typeSpeed={100}
-              deleteSpeed={50}
-            />
-          </span>
-          <Button title="Download CV" onClick={downloadCV} />
-        </h1>
+      <div className="flex gap-10">
+        <a
+          href="https://www.instagram.com/raflytch/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BsInstagram
+            size={32}
+            className="hover:text-black text-brightColor transition-all cursor-pointer"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/raflyazizabdillah/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin
+            size={32}
+            className="hover:text-black text-brightColor transition-all cursor-pointer"
+          />
+        </a>
       </div>
-      <div className="w-full mt-8">
-        <img
-          src={img}
-          alt="img"
-          className="w-full object-cover object-center md:object-center lg:object-center h-[250px] md:h-[600px] lg:h-[450px]"
-        />
+      <div className="flex flex-row items-center cursor-pointer mt-5 lg:mt-0">
+        <h1 className="text-3xl font-semibold text-brightColor hover:text-black hover:transition-all duration-500">
+          Rafly.
+        </h1>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Footer;
