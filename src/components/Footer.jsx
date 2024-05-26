@@ -18,11 +18,16 @@ const Footer = () => {
       data-aos="fade-right"
     >
       <div className="flex gap-10">
-        <BsInstagram
-          size={32}
-          className="hover:text-black text-brightColor transition-all cursor-pointer"
-        />
-        {/* LinkedIn icon with link */}
+        <a
+          href="https://www.instagram.com/raflytch/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BsInstagram
+            size={32}
+            className="hover:text-black text-brightColor transition-all cursor-pointer"
+          />
+        </a>
         <a
           href="https://www.linkedin.com/in/raflyazizabdillah/"
           target="_blank"
